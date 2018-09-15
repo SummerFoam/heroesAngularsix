@@ -1,0 +1,13 @@
+
+<!-- 添加一个 MessagesComponent，它在屏幕的底部显示应用中的消息。 -->
+
+<!-- *ngIf 只有在有消息时才会显示消息区 -->
+<!-- *ngFor 用来在一系列 <div> 元素中展示消息列表 -->
+<div *ngIf="messageService.messages.length">
+
+    <h2>Messages</h2>
+    <button class="clear"
+            (click)="messageService.clear()">clear</button>
+    <div *ngFor='let message of messageService.messages'> {{message}} </div>
+  
+  </div>

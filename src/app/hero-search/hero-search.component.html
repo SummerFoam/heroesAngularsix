@@ -1,0 +1,12 @@
+<div id="search-component">
+  <h4>Hero Search</h4>
+  <input #searchBox id="search-box" (keyup)="search(searchBox.value)"/>
+  <ul class="search-result">
+      <!-- heroes$ 是一个 Observable，而不是数组,有一个管道字符（|），后面紧跟着一个 async，它表示 Angular 的 AsyncPipe。
+      AsyncPipe 会自动订阅到 Observable，这样你就不用再在组件类中订阅了 -->
+    <li *ngFor="let hero of heroes$ | async">
+      <a routerLink="/detail/{{hero.id}}"></a>
+      {{hero.name}}
+    </li>
+  </ul>
+</div>
